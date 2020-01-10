@@ -22,3 +22,13 @@ Route::get('/', 'HomeController@index');
 Route::post('/upload_image', 'HomeController@store');
 
 Route::post('/upload_image_crop', 'HomeController@edit');
+
+
+
+
+Route::get('/multiple', 'MultipleController@index');
+
+Route::post('/upload_multiple', 'MultipleController@store');
+
+
+Route::post('/test_image', 'MultipleController@create');
