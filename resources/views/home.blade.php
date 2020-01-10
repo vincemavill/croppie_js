@@ -39,7 +39,9 @@
         <div class="col-lg-6">
 
 
-            <img id="image_2_crop" src="" />
+            <!-- <img id="image_2_crop" src="" /> -->
+                     <div id="image_2_crop"></div>
+                     
 
             <form action="/upload_image" id="upload_function" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -99,12 +101,17 @@
 
 <script>
 
+
+
 var el = document.getElementById('image_2_crop');
 
 var vanilla = new Croppie(el, {
+    enableExif: true,
     viewport: { width: 200, height: 200 },
     boundary: { width: 300, height: 300 },
+    enableOrientation: true
 });
+
 
 
 
@@ -117,7 +124,7 @@ $('#picture_select').on('change', function() {
         let reader = new FileReader();
 
         reader.onload = function(e) {
-
+            console.log(e.target.result,)
             vanilla.bind({
                 url: e.target.result,
             });

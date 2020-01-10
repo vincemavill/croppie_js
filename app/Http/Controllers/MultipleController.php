@@ -49,7 +49,7 @@ class MultipleController extends Controller
                 }); 
             }
 
-            $img->resizeCanvas($width, $height, 'center', false, '#fff');
+            $img->resizeCanvas($width, $height, 'center', false, '#000');
 
             $img->stream(); 
 
@@ -67,7 +67,7 @@ class MultipleController extends Controller
     {
 
 
-        
+
 
         
         $prod_image = $request->file('file');
@@ -98,7 +98,7 @@ class MultipleController extends Controller
                 }); 
             }
 
-            $img->resizeCanvas($width, $height, 'center', false, '#fff');
+            $img->resizeCanvas($width, $height, 'center', false, '#000');
 
             $img->stream(); 
 

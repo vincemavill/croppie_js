@@ -178,13 +178,19 @@
     }
 
     .dz-remove {
+      color:#ff0e00;
+
       font-size: 14px;
       text-align: center;
+      font-weight: 700;
+    
+
+
       display: block;
       cursor: pointer;
       border: none;
       &:hover {
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
 
@@ -255,6 +261,8 @@
           @include prefix((transform: scale(1.05, 1.05))); // Getting rid of that white bleed-in
           @include prefix((filter: blur(8px)), webkit); // Getting rid of that white bleed-in
         }
+        
+        
       }
     }
     .dz-image {
@@ -265,7 +273,7 @@
       position: relative;
       display: block;
       z-index: 10;
-
+     
       img {
         display: block;
       }
@@ -333,7 +341,7 @@
       position: absolute;
       height: 16px;
       left: 50%;
-      top: 50%;
+      top: 70%;
       margin-top: -8px;
 
       width: 80px;
@@ -346,7 +354,7 @@
       -webkit-transform: scale(1);
 
 
-      border-radius: 2px;
+      border-radius: 20px;
 
       overflow: hidden;
 

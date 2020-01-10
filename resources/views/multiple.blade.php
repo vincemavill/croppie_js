@@ -18,10 +18,12 @@
         }
     </style>
 
-        <link rel="stylesheet" href="css/dropzone.css">
 
-            <script src="js/dropzone.js"></script>
- 
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/croppie.css" />
+
+
+    
 
 
   </head>
@@ -54,7 +56,7 @@
         <div class="col-lg-6">
 
 
-                   
+            <div id="image_2_crop"></div>
 
 
         </div>
@@ -90,10 +92,19 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
+    <script src="js/dropzone.js"></script>
+    <script src="js/croppie.js"></script>
 
     <script>
 
+    
+    var el = document.getElementById('image_2_crop');
+
+    var vanilla = new Croppie(el, {
+        viewport: { width: 200, height: 200 },
+        boundary: { width: 300, height: 300 },
+        enableOrientation: true
+    });
 
     Dropzone.autoDiscover = false;
 
@@ -127,6 +138,22 @@
             Dropzone_form.processQueue();
         }
     }
+
+
+
+    Dropzone_form.on("addedfile", function(file) {
+        file.previewElement.addEventListener("click", function() {
+
+            console.log(file);
+            console.log(file.dataURL);
+
+            // vanilla.bind({
+            //     url: file.dataURL,
+            // });
+
+
+        });
+    });
 
 
 
